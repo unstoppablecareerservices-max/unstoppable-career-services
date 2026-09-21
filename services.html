@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Unstoppable Career Services</title>
+  <meta name="description" content="Executive career services including resume strategy, cover letters, LinkedIn optimization, Candidate Evidence Strategy, executive career development, and recruiting services.">
+
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:#172235;
+      background:#f7f9fc;
+      line-height:1.6;
+    }
+    a{text-decoration:none}
+    .container{
+      width:min(1120px,92%);
+      margin:auto;
+    }
+
+    header{
+      background:#071321;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+    }
+
+    .logo img{
+      width:175px;
+      max-width:100%;
+      display:block;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:#fff;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .nav-links a:hover{
+      color:#d4a72c;
+    }
+
+    .nav-cta{
+      background:#d4a72c;
+      color:#071321!important;
+      padding:11px 17px;
+      border-radius:8px;
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#071321 0%,#10243a 100%);
+      color:#fff;
+      padding:90px 0;
+      text-align:center;
+    }
+
+    .eyebrow{
+      color:#d4a72c;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      margin-bottom:15px;
+    }
+
+    h1{
+      font-size:56px;
+      line-height:1.08;
+      margin:0 auto 20px;
+      max-width:850px;
+    }
+
+    .hero p{
+      max-width:760px;
+      margin:auto;
+      color:#dbe4ef;
+      font-size:18px;
+    }
+
+    .section{
+      padding:75px 0;
+    }
+
+    .section-heading{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 45px;
+    }
+
+    .section-heading h2{
+      color:#071321;
+      font-size:38px;
+      line-height:1.15;
+      margin:0 0 14px;
+    }
+
+    .section-heading p{
+      color:#617083;
+      margin:0;
+      font-size:16px;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .service-card{
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:20px;
+      padding:30px;
+      box-shadow:0 12px 35px rgba(15,23,42,.06);
+    }
+
+    .service-number{
+      color:#b88916;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:12px;
+    }
+
+    .service-card h3{
+      color:#071321;
+      font-size:24px;
+      margin:0 0 12px;
+    }
+
+    .service-card p{
+      color:#59687a;
+      margin:0 0 18px;
+    }
+
+    .service-card ul{
+      padding-left:20px;
+      margin:0;
+      color:#475569;
+    }
+
+    .service-card li{
+      margin-bottom:7px;
+    }
+
+    .highlight{
+      background:#071321;
+      color:#fff;
+      padding:65px 0;
+    }
+
+    .highlight-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:45px;
+      align-items:center;
+    }
+
+    .highlight h2{
+      font-size:38px;
+      line-height:1.15;
+      margin:0 0 15px;
+    }
+
+    .highlight p{
+      color:#d7e0eb;
+      font-size:16px;
+    }
+
+    .highlight-box{
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.05);
+      border-radius:18px;
+      padding:25px;
+    }
+
+    .highlight-box strong{
+      display:block;
+      color:#d4a72c;
+      font-size:14px;
+      margin-bottom:8px;
+    }
+
+    .cta{
+      text-align:center;
+      padding:80px 0;
+      background:#fff;
+    }
+
+    .cta h2{
+      font-size:38px;
+      color:#071321;
+      margin:0 0 15px;
+    }
+
+    .cta p{
+      max-width:650px;
+      margin:0 auto 25px;
+      color:#617083;
+    }
+
+    .button{
+      display:inline-block;
+      background:#d4a72c;
+      color:#071321;
+      padding:14px 23px;
+      border-radius:9px;
+      font-weight:800;
+    }
+
+    footer{
+      background:#050e18;
+      color:#aebccc;
+      padding:35px 0;
+      text-align:center;
+      font-size:13px;
+    }
+
+    footer strong{
+      color:#fff;
+    }
+
+    @media(max-width:800px){
+      .nav{
+        padding:15px 0;
+        flex-direction:column;
+      }
+
+      .nav-links{
+        justify-content:center;
+        gap:14px;
+      }
+
+      h1{
+        font-size:42px;
+      }
+
+      .services-grid,
+      .highlight-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-heading h2,
+      .highlight h2,
+      .cta h2{
+        font-size:31px;
+      }
+    }
+
+    @media(max-width:520px){
+      .logo img{
+        width:150px;
+      }
+
+      .nav-links a{
+        font-size:12px;
+      }
+
+      h1{
+        font-size:35px;
+      }
+
+      .hero{
+        padding:65px 0;
+      }
+
+      .section{
+        padding:55px 0;
+      }
+
+      .service-card{
+        padding:24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Unstoppable Career Services">
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Our Team</a>
+      <a href="results.html">Results</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">Our Services</div>
+
+    <h1>Strategic Career Services Built Around Your Professional Goals</h1>
+
+    <p>
+      We help professionals strengthen how their experience, achievements,
+      leadership, and career value are presented across the documents and
+      professional platforms that matter.
+    </p>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">What We Do</div>
+
+      <h2>Professional Positioning That Goes Beyond a Resume</h2>
+
+      <p>
+        Every service is designed to help you communicate your professional
+        value with greater clarity, relevance, credibility, and strategic focus.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-number">01 — EXECUTIVE POSITIONING</div>
+        <h3>Executive Resume Strategy & Review</h3>
+        <p>
+          Develop a stronger executive resume that clearly communicates
+          leadership experience, measurable achievements, scope, and professional impact.
+        </p>
+        <ul>
+          <li>Executive resume review</li>
+          <li>Leadership positioning</li>
+          <li>Achievement development</li>
+          <li>Career narrative refinement</li>
+          <li>ATS-conscious formatting</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">02 — EXECUTIVE COMMUNICATION</div>
+        <h3>Executive Cover Letter</h3>
+        <p>
+          Build a targeted executive cover letter that connects your experience
+          directly to the opportunity and communicates your professional value.
+        </p>
+        <ul>
+          <li>Role-specific positioning</li>
+          <li>Leadership narrative</li>
+          <li>Relevant achievement integration</li>
+          <li>Executive-level communication</li>
+          <li>Opportunity alignment</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">03 — PROFESSIONAL VISIBILITY</div>
+        <h3>LinkedIn Optimization</h3>
+        <p>
+          Strengthen your LinkedIn presence so your profile communicates your
+          expertise, leadership, accomplishments, and career direction clearly.
+        </p>
+        <ul>
+          <li>Headline strategy</li>
+          <li>Executive About section</li>
+          <li>Experience positioning</li>
+          <li>Achievement-focused content</li>
+          <li>Professional brand alignment</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">04 — CANDIDATE STRATEGY</div>
+        <h3>Candidate Evidence Strategy (CES)</h3>
+        <p>
+          Organize and position career evidence around the requirements of a
+          target opportunity, helping present relevant accomplishments and
+          qualifications in a structured way.
+        </p>
+        <ul>
+          <li>Role requirement mapping</li>
+          <li>Career evidence development</li>
+          <li>Achievement documentation</li>
+          <li>Relevant experience positioning</li>
+          <li>Targeted candidate strategy</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">05 — CAREER DEVELOPMENT</div>
+        <h3>Executive Career Development</h3>
+        <p>
+          Strategic support for professionals navigating career transitions,
+          leadership opportunities, executive positioning, and long-term career growth.
+        </p>
+        <ul>
+          <li>Career direction</li>
+          <li>Executive positioning</li>
+          <li>Opportunity strategy</li>
+          <li>Professional development</li>
+          <li>Career transition support</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">06 — TALENT SERVICES</div>
+        <h3>Recruiting & Talent Services</h3>
+        <p>
+          Professional recruiting and talent support designed to connect
+          qualified professionals with opportunities and support organizations
+          seeking strong talent.
+        </p>
+        <ul>
+          <li>Talent identification</li>
+          <li>Candidate outreach</li>
+          <li>Recruiting support</li>
+          <li>Candidate communication</li>
+          <li>Professional talent strategy</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="highlight">
+  <div class="container highlight-grid">
+
+    <div>
+      <div class="eyebrow">Our Approach</div>
+
+      <h2>Your experience deserves to be presented strategically.</h2>
+
+      <p>
+        Strong career positioning is not simply about listing responsibilities.
+        It is about clearly communicating the value you have created, the
+        problems you have solved, the leadership you have demonstrated, and
+        the relevance of your experience to the opportunity ahead.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <strong>OUR FOCUS</strong>
+      <p>
+        Clarity • Relevance • Evidence • Positioning • Professional Impact
+      </p>
+
+      <strong>WHO WE SUPPORT</strong>
+      <p>
+        Executives • Experienced Professionals • Career Transitioners •
+        High-Potential Candidates
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+
+    <div class="eyebrow">Ready to Begin?</div>
+
+    <h2>Let's Position Your Career With Purpose.</h2>
+
+    <p>
+      Tell us about your career goals, target opportunity, or professional
+      challenge and our team can help identify the right service for you.
+    </p>
+
+    <a class="button" href="contact.html">Start Your Journey</a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>UNSTOPPABLE CAREER SERVICES</strong><br><br>
+    Executive Career Strategy • Professional Positioning • Talent Services<br><br>
+    unstoppablecareerservices@gmail.com
+  </div>
+</footer>
+
+</body>
+</html>
