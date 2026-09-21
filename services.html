@@ -3,81 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Services | Unstoppable Career Services</title>
-  <meta name="description" content="Executive career services including resume strategy, cover letters, LinkedIn optimization, Candidate Evidence Strategy, executive career development, and recruiting services.">
+
+  <meta name="description" content="Unstoppable Career Services provides executive resume strategy, cover letters, LinkedIn optimization, Candidate Evidence Strategy, executive career development, and recruiting services.">
 
   <style>
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
+    *{
+      box-sizing:border-box;
       margin:0;
-      font-family:Arial,Helvetica,sans-serif;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
       color:#172235;
-      background:#f7f9fc;
+      background:#f7f8fb;
       line-height:1.6;
     }
-    a{text-decoration:none}
+
+    a{
+      text-decoration:none;
+    }
+
     .container{
-      width:min(1120px,92%);
+      width:min(1160px,92%);
       margin:auto;
     }
 
+    /* =========================
+       HEADER
+    ========================= */
+
     header{
       background:#071321;
-      border-bottom:1px solid rgba(255,255,255,.12);
+      border-bottom:1px solid rgba(255,255,255,.1);
       position:sticky;
       top:0;
-      z-index:1000;
+      z-index:999;
     }
 
     .nav{
-      min-height:82px;
+      min-height:84px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:25px;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
+      gap:30px;
     }
 
     .logo img{
-      width:175px;
-      max-width:100%;
+      width:180px;
       display:block;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:24px;
+      gap:25px;
       flex-wrap:wrap;
     }
 
     .nav-links a{
-      color:#fff;
+      color:#ffffff;
       font-size:14px;
       font-weight:700;
+      transition:.25s ease;
     }
 
     .nav-links a:hover{
       color:#d4a72c;
     }
 
+    .nav-links .active{
+      color:#d4a72c;
+    }
+
     .nav-cta{
       background:#d4a72c;
       color:#071321!important;
-      padding:11px 17px;
+      padding:12px 19px;
       border-radius:8px;
     }
 
+    .nav-cta:hover{
+      background:#e5bd4b;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero{
-      background:linear-gradient(135deg,#071321 0%,#10243a 100%);
-      color:#fff;
-      padding:90px 0;
-      text-align:center;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(212,167,44,.14), transparent 30%),
+        linear-gradient(135deg,#071321 0%,#10283f 100%);
+      color:#ffffff;
+      padding:105px 0 95px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-content{
+      max-width:900px;
     }
 
     .eyebrow{
@@ -86,167 +117,415 @@
       font-weight:800;
       letter-spacing:3px;
       text-transform:uppercase;
-      margin-bottom:15px;
+      margin-bottom:18px;
     }
 
-    h1{
-      font-size:56px;
+    .hero h1{
+      font-size:60px;
       line-height:1.08;
-      margin:0 auto 20px;
-      max-width:850px;
+      letter-spacing:-1.5px;
+      margin-bottom:25px;
+    }
+
+    .hero h1 span{
+      color:#d4a72c;
     }
 
     .hero p{
       max-width:760px;
-      margin:auto;
-      color:#dbe4ef;
-      font-size:18px;
+      color:#d9e2ed;
+      font-size:19px;
+      line-height:1.8;
+      margin-bottom:35px;
     }
 
-    .section{
-      padding:75px 0;
+    .hero-buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .button{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:8px;
+      font-weight:800;
+      font-size:14px;
+      transition:.25s ease;
+    }
+
+    .button-primary{
+      background:#d4a72c;
+      color:#071321;
+    }
+
+    .button-primary:hover{
+      background:#e5bd4b;
+      transform:translateY(-2px);
+    }
+
+    .button-outline{
+      border:1px solid rgba(255,255,255,.3);
+      color:#ffffff;
+    }
+
+    .button-outline:hover{
+      border-color:#d4a72c;
+      color:#d4a72c;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro{
+      background:#ffffff;
+      padding:85px 0;
+    }
+
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .intro h2{
+      color:#071321;
+      font-size:42px;
+      line-height:1.15;
+      margin-bottom:20px;
+    }
+
+    .intro p{
+      color:#607083;
+      font-size:17px;
+      margin-bottom:16px;
+    }
+
+    .intro-box{
+      background:#071321;
+      color:#ffffff;
+      padding:38px;
+      border-radius:18px;
+      box-shadow:0 20px 45px rgba(7,19,33,.12);
+    }
+
+    .intro-box h3{
+      color:#d4a72c;
+      margin-bottom:14px;
+      font-size:21px;
+    }
+
+    .intro-box p{
+      color:#d6e0eb;
+      margin:0;
+      font-size:16px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services{
+      padding:95px 0;
+      background:#f7f8fb;
     }
 
     .section-heading{
-      text-align:center;
       max-width:760px;
-      margin:0 auto 45px;
+      margin:0 auto 55px;
+      text-align:center;
     }
 
     .section-heading h2{
       color:#071321;
-      font-size:38px;
+      font-size:43px;
       line-height:1.15;
-      margin:0 0 14px;
+      margin-bottom:16px;
     }
 
     .section-heading p{
-      color:#617083;
-      margin:0;
-      font-size:16px;
+      color:#687789;
+      font-size:17px;
     }
 
     .services-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:24px;
+      gap:25px;
     }
 
     .service-card{
-      background:#fff;
-      border:1px solid #e2e8f0;
-      border-radius:20px;
-      padding:30px;
-      box-shadow:0 12px 35px rgba(15,23,42,.06);
+      background:#ffffff;
+      border:1px solid #e2e7ee;
+      border-radius:18px;
+      padding:35px;
+      position:relative;
+      overflow:hidden;
+      transition:.3s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 20px 45px rgba(15,23,42,.09);
+      border-color:#d4a72c;
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      width:4px;
+      height:100%;
+      background:#d4a72c;
     }
 
     .service-number{
       color:#b88916;
-      font-size:13px;
-      font-weight:800;
+      font-size:12px;
+      font-weight:900;
       letter-spacing:2px;
-      margin-bottom:12px;
+      margin-bottom:15px;
     }
 
     .service-card h3{
       color:#071321;
-      font-size:24px;
-      margin:0 0 12px;
+      font-size:25px;
+      margin-bottom:14px;
+      line-height:1.25;
     }
 
     .service-card p{
-      color:#59687a;
-      margin:0 0 18px;
+      color:#617083;
+      font-size:15px;
+      margin-bottom:20px;
     }
 
     .service-card ul{
-      padding-left:20px;
-      margin:0;
-      color:#475569;
+      list-style:none;
     }
 
     .service-card li{
-      margin-bottom:7px;
+      color:#465568;
+      font-size:14px;
+      margin-bottom:9px;
+      padding-left:22px;
+      position:relative;
     }
 
-    .highlight{
+    .service-card li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:#d4a72c;
+      font-weight:900;
+    }
+
+    /* =========================
+       VALUE SECTION
+    ========================= */
+
+    .value{
       background:#071321;
-      color:#fff;
-      padding:65px 0;
+      color:#ffffff;
+      padding:95px 0;
     }
 
-    .highlight-grid{
+    .value-grid{
       display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:45px;
+      grid-template-columns:1fr 1fr;
+      gap:65px;
       align-items:center;
     }
 
-    .highlight h2{
-      font-size:38px;
+    .value h2{
+      font-size:43px;
       line-height:1.15;
-      margin:0 0 15px;
+      margin-bottom:20px;
     }
 
-    .highlight p{
-      color:#d7e0eb;
-      font-size:16px;
-    }
-
-    .highlight-box{
-      border:1px solid rgba(255,255,255,.15);
-      background:rgba(255,255,255,.05);
-      border-radius:18px;
-      padding:25px;
-    }
-
-    .highlight-box strong{
-      display:block;
+    .value h2 span{
       color:#d4a72c;
-      font-size:14px;
+    }
+
+    .value p{
+      color:#d3deea;
+      font-size:16px;
+      margin-bottom:25px;
+    }
+
+    .value-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .value-item{
+      display:flex;
+      gap:15px;
+      align-items:flex-start;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.035);
+      border-radius:12px;
+    }
+
+    .value-icon{
+      color:#d4a72c;
+      font-size:20px;
+      font-weight:900;
+    }
+
+    .value-item strong{
+      display:block;
+      color:#ffffff;
+      margin-bottom:3px;
+    }
+
+    .value-item span{
+      color:#aebdcd;
+      font-size:13px;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process{
+      padding:95px 0;
+      background:#ffffff;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .process-card{
+      text-align:center;
+      padding:30px 20px;
+      border:1px solid #e2e7ee;
+      border-radius:16px;
+      background:#ffffff;
+    }
+
+    .process-number{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:#071321;
+      color:#d4a72c;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 18px;
+      font-weight:900;
+    }
+
+    .process-card h3{
+      color:#071321;
+      font-size:18px;
+      margin-bottom:9px;
+    }
+
+    .process-card p{
+      color:#687789;
+      font-size:13px;
+    }
+
+    /* =========================
+       WHO WE SERVE
+    ========================= */
+
+    .audience{
+      padding:90px 0;
+      background:#f7f8fb;
+    }
+
+    .audience-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .audience-card{
+      background:#ffffff;
+      padding:28px 22px;
+      border-radius:15px;
+      border:1px solid #e2e7ee;
+      text-align:center;
+    }
+
+    .audience-card h3{
+      color:#071321;
+      font-size:18px;
       margin-bottom:8px;
     }
 
+    .audience-card p{
+      color:#687789;
+      font-size:13px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
     .cta{
+      background:
+        radial-gradient(circle at 15% 50%, rgba(212,167,44,.15), transparent 25%),
+        #10283f;
+      color:#ffffff;
+      padding:95px 0;
       text-align:center;
-      padding:80px 0;
-      background:#fff;
+    }
+
+    .cta .eyebrow{
+      margin-bottom:15px;
     }
 
     .cta h2{
-      font-size:38px;
-      color:#071321;
-      margin:0 0 15px;
+      font-size:44px;
+      line-height:1.15;
+      margin-bottom:18px;
     }
 
     .cta p{
-      max-width:650px;
-      margin:0 auto 25px;
-      color:#617083;
+      max-width:680px;
+      margin:0 auto 30px;
+      color:#d5e0eb;
+      font-size:17px;
     }
 
-    .button{
-      display:inline-block;
-      background:#d4a72c;
-      color:#071321;
-      padding:14px 23px;
-      border-radius:9px;
-      font-weight:800;
-    }
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer{
       background:#050e18;
-      color:#aebccc;
-      padding:35px 0;
+      color:#9eafc1;
+      padding:45px 0;
       text-align:center;
       font-size:13px;
     }
 
     footer strong{
-      color:#fff;
+      color:#ffffff;
+      font-size:16px;
     }
 
-    @media(max-width:800px){
+    footer .gold{
+      color:#d4a72c;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:900px){
+
       .nav{
         padding:15px 0;
         flex-direction:column;
@@ -257,51 +536,92 @@
         gap:14px;
       }
 
-      h1{
-        font-size:42px;
+      .hero h1{
+        font-size:46px;
       }
 
-      .services-grid,
-      .highlight-grid{
+      .intro-grid,
+      .value-grid{
         grid-template-columns:1fr;
+        gap:35px;
       }
 
-      .section-heading h2,
-      .highlight h2,
-      .cta h2{
-        font-size:31px;
+      .process-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .audience-grid{
+        grid-template-columns:repeat(2,1fr);
       }
     }
 
-    @media(max-width:520px){
+    @media(max-width:650px){
+
       .logo img{
-        width:150px;
+        width:155px;
       }
 
       .nav-links a{
         font-size:12px;
       }
 
-      h1{
-        font-size:35px;
+      .hero{
+        padding:70px 0;
       }
 
-      .hero{
+      .hero h1{
+        font-size:37px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .intro,
+      .services,
+      .value,
+      .process,
+      .audience,
+      .cta{
         padding:65px 0;
       }
 
-      .section{
-        padding:55px 0;
+      .intro h2,
+      .section-heading h2,
+      .value h2,
+      .cta h2{
+        font-size:31px;
+      }
+
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+
+      .process-grid,
+      .audience-grid{
+        grid-template-columns:1fr;
       }
 
       .service-card{
-        padding:24px;
+        padding:28px;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .button{
+        text-align:center;
       }
     }
   </style>
 </head>
 
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
   <div class="container nav">
@@ -312,7 +632,7 @@
 
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
+      <a href="services.html" class="active">Services</a>
       <a href="about.html">About</a>
       <a href="team.html">Our Team</a>
       <a href="results.html">Results</a>
@@ -323,127 +643,296 @@
   </div>
 </header>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
   <div class="container">
 
-    <div class="eyebrow">Our Services</div>
+    <div class="hero-content">
 
-    <h1>Strategic Career Services Built Around Your Professional Goals</h1>
+      <div class="eyebrow">
+        Executive Career Services
+      </div>
 
-    <p>
-      We help professionals strengthen how their experience, achievements,
-      leadership, and career value are presented across the documents and
-      professional platforms that matter.
-    </p>
+      <h1>
+        Your Experience Has Value.<br>
+        <span>We Help You Position It.</span>
+      </h1>
+
+      <p>
+        Strategic career services designed to help executives and experienced
+        professionals communicate their leadership, achievements, expertise,
+        and professional value with clarity and confidence.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="contact.html" class="button button-primary">
+          Start Your Career Strategy
+        </a>
+
+        <a href="#services" class="button button-outline">
+          Explore Our Services
+        </a>
+
+      </div>
+
+    </div>
 
   </div>
+
 </section>
 
-<section class="section">
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+  <div class="container intro-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        More Than Career Documents
+      </div>
+
+      <h2>
+        Strategic positioning for professionals operating at a higher level.
+      </h2>
+
+      <p>
+        Your career experience represents years of leadership, decisions,
+        achievements, relationships, and professional growth.
+      </p>
+
+      <p>
+        Our role is to help translate that experience into a professional
+        presentation that is clear, relevant, credible, and aligned with
+        the opportunities you are pursuing.
+      </p>
+
+    </div>
+
+    <div class="intro-box">
+
+      <h3>
+        Our Positioning Framework
+      </h3>
+
+      <p>
+        We focus on five core areas:
+        <br><br>
+        <strong>Clarity</strong> — Make your value easy to understand.<br><br>
+        <strong>Relevance</strong> — Connect your experience to the opportunity.<br><br>
+        <strong>Evidence</strong> — Surface meaningful achievements and results.<br><br>
+        <strong>Positioning</strong> — Present your professional identity strategically.<br><br>
+        <strong>Impact</strong> — Communicate the value you have created.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
   <div class="container">
 
     <div class="section-heading">
-      <div class="eyebrow">What We Do</div>
 
-      <h2>Professional Positioning That Goes Beyond a Resume</h2>
+      <div class="eyebrow">
+        What We Do
+      </div>
+
+      <h2>
+        Career Services Built Around Your Professional Story
+      </h2>
 
       <p>
-        Every service is designed to help you communicate your professional
-        value with greater clarity, relevance, credibility, and strategic focus.
+        Each service is designed to address a specific part of your
+        professional positioning and career strategy.
       </p>
+
     </div>
+
 
     <div class="services-grid">
 
+
+      <!-- SERVICE 1 -->
+
       <div class="service-card">
-        <div class="service-number">01 — EXECUTIVE POSITIONING</div>
-        <h3>Executive Resume Strategy & Review</h3>
+
+        <div class="service-number">
+          01 — EXECUTIVE POSITIONING
+        </div>
+
+        <h3>
+          Executive Resume Strategy & Review
+        </h3>
+
         <p>
-          Develop a stronger executive resume that clearly communicates
-          leadership experience, measurable achievements, scope, and professional impact.
+          A strategic review and development approach designed to present
+          leadership experience, measurable achievements, scope, and
+          professional impact.
         </p>
+
         <ul>
-          <li>Executive resume review</li>
-          <li>Leadership positioning</li>
-          <li>Achievement development</li>
+          <li>Executive-level resume positioning</li>
+          <li>Leadership experience development</li>
+          <li>Achievement and impact positioning</li>
           <li>Career narrative refinement</li>
-          <li>ATS-conscious formatting</li>
+          <li>ATS-conscious structure</li>
         </ul>
+
       </div>
 
+
+      <!-- SERVICE 2 -->
+
       <div class="service-card">
-        <div class="service-number">02 — EXECUTIVE COMMUNICATION</div>
-        <h3>Executive Cover Letter</h3>
+
+        <div class="service-number">
+          02 — EXECUTIVE COMMUNICATION
+        </div>
+
+        <h3>
+          Executive Cover Letter
+        </h3>
+
         <p>
-          Build a targeted executive cover letter that connects your experience
-          directly to the opportunity and communicates your professional value.
+          A targeted executive communication document that connects your
+          professional experience with the needs and priorities of the
+          opportunity.
         </p>
+
         <ul>
-          <li>Role-specific positioning</li>
-          <li>Leadership narrative</li>
+          <li>Opportunity-specific positioning</li>
+          <li>Executive leadership narrative</li>
           <li>Relevant achievement integration</li>
-          <li>Executive-level communication</li>
-          <li>Opportunity alignment</li>
+          <li>Professional value communication</li>
+          <li>Strategic opportunity alignment</li>
         </ul>
+
       </div>
 
+
+      <!-- SERVICE 3 -->
+
       <div class="service-card">
-        <div class="service-number">03 — PROFESSIONAL VISIBILITY</div>
-        <h3>LinkedIn Optimization</h3>
+
+        <div class="service-number">
+          03 — PROFESSIONAL VISIBILITY
+        </div>
+
+        <h3>
+          LinkedIn Optimization
+        </h3>
+
         <p>
-          Strengthen your LinkedIn presence so your profile communicates your
-          expertise, leadership, accomplishments, and career direction clearly.
+          Strengthen your professional presence so your LinkedIn profile
+          communicates your expertise, leadership, achievements, and
+          career direction.
         </p>
+
         <ul>
-          <li>Headline strategy</li>
-          <li>Executive About section</li>
+          <li>Executive headline strategy</li>
+          <li>Professional About section</li>
           <li>Experience positioning</li>
-          <li>Achievement-focused content</li>
+          <li>Achievement-focused presentation</li>
           <li>Professional brand alignment</li>
         </ul>
+
       </div>
 
+
+      <!-- SERVICE 4 -->
+
       <div class="service-card">
-        <div class="service-number">04 — CANDIDATE STRATEGY</div>
-        <h3>Candidate Evidence Strategy (CES)</h3>
+
+        <div class="service-number">
+          04 — CANDIDATE STRATEGY
+        </div>
+
+        <h3>
+          Candidate Evidence Strategy
+        </h3>
+
         <p>
-          Organize and position career evidence around the requirements of a
-          target opportunity, helping present relevant accomplishments and
-          qualifications in a structured way.
+          A structured approach to organizing career evidence around the
+          requirements and priorities of a target opportunity.
         </p>
+
         <ul>
-          <li>Role requirement mapping</li>
+          <li>Opportunity requirement mapping</li>
           <li>Career evidence development</li>
           <li>Achievement documentation</li>
           <li>Relevant experience positioning</li>
           <li>Targeted candidate strategy</li>
         </ul>
+
       </div>
 
+
+      <!-- SERVICE 5 -->
+
       <div class="service-card">
-        <div class="service-number">05 — CAREER DEVELOPMENT</div>
-        <h3>Executive Career Development</h3>
+
+        <div class="service-number">
+          05 — CAREER DEVELOPMENT
+        </div>
+
+        <h3>
+          Executive Career Development
+        </h3>
+
         <p>
-          Strategic support for professionals navigating career transitions,
-          leadership opportunities, executive positioning, and long-term career growth.
+          Strategic career support for professionals navigating leadership
+          transitions, new opportunities, executive positioning, and
+          long-term professional growth.
         </p>
+
         <ul>
-          <li>Career direction</li>
+          <li>Career direction strategy</li>
           <li>Executive positioning</li>
           <li>Opportunity strategy</li>
-          <li>Professional development</li>
+          <li>Professional development planning</li>
           <li>Career transition support</li>
         </ul>
+
       </div>
 
+
+      <!-- SERVICE 6 -->
+
       <div class="service-card">
-        <div class="service-number">06 — TALENT SERVICES</div>
-        <h3>Recruiting & Talent Services</h3>
+
+        <div class="service-number">
+          06 — TALENT SERVICES
+        </div>
+
+        <h3>
+          Recruiting & Talent Services
+        </h3>
+
         <p>
-          Professional recruiting and talent support designed to connect
-          qualified professionals with opportunities and support organizations
-          seeking strong talent.
+          Professional recruiting and talent support for organizations and
+          qualified professionals seeking stronger connections between
+          talent and opportunity.
         </p>
+
         <ul>
           <li>Talent identification</li>
           <li>Candidate outreach</li>
@@ -451,67 +940,313 @@
           <li>Candidate communication</li>
           <li>Professional talent strategy</li>
         </ul>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     VALUE
+========================= -->
+
+<section class="value">
+
+  <div class="container value-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        The Unstoppable Difference
+      </div>
+
+      <h2>
+        We don't simply make documents look better.
+        <span>We strengthen the story behind them.</span>
+      </h2>
+
+      <p>
+        Professional positioning requires more than formatting.
+        It requires understanding what makes your experience valuable,
+        identifying the evidence behind your achievements, and communicating
+        that value in a way that is relevant to your professional direction.
+      </p>
+
+      <a href="contact.html" class="button button-primary">
+        Discuss Your Career Goals
+      </a>
+
+    </div>
+
+
+    <div class="value-list">
+
+      <div class="value-item">
+        <div class="value-icon">01</div>
+        <div>
+          <strong>Strategic Thinking</strong>
+          <span>We focus on the bigger professional picture.</span>
+        </div>
+      </div>
+
+      <div class="value-item">
+        <div class="value-icon">02</div>
+        <div>
+          <strong>Evidence-Based Positioning</strong>
+          <span>Your accomplishments become part of the story.</span>
+        </div>
+      </div>
+
+      <div class="value-item">
+        <div class="value-icon">03</div>
+        <div>
+          <strong>Opportunity Alignment</strong>
+          <span>Your positioning connects with your target direction.</span>
+        </div>
+      </div>
+
+      <div class="value-item">
+        <div class="value-icon">04</div>
+        <div>
+          <strong>Professional Presentation</strong>
+          <span>Every touchpoint should communicate credibility.</span>
+        </div>
       </div>
 
     </div>
-  </div>
-</section>
-
-<section class="highlight">
-  <div class="container highlight-grid">
-
-    <div>
-      <div class="eyebrow">Our Approach</div>
-
-      <h2>Your experience deserves to be presented strategically.</h2>
-
-      <p>
-        Strong career positioning is not simply about listing responsibilities.
-        It is about clearly communicating the value you have created, the
-        problems you have solved, the leadership you have demonstrated, and
-        the relevance of your experience to the opportunity ahead.
-      </p>
-    </div>
-
-    <div class="highlight-box">
-      <strong>OUR FOCUS</strong>
-      <p>
-        Clarity • Relevance • Evidence • Positioning • Professional Impact
-      </p>
-
-      <strong>WHO WE SUPPORT</strong>
-      <p>
-        Executives • Experienced Professionals • Career Transitioners •
-        High-Potential Candidates
-      </p>
-    </div>
 
   </div>
+
 </section>
 
-<section class="cta">
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section class="process">
+
   <div class="container">
 
-    <div class="eyebrow">Ready to Begin?</div>
+    <div class="section-heading">
 
-    <h2>Let's Position Your Career With Purpose.</h2>
+      <div class="eyebrow">
+        Our Process
+      </div>
+
+      <h2>
+        A Structured Approach to Career Positioning
+      </h2>
+
+      <p>
+        We take a deliberate approach to understanding your professional
+        experience and translating it into strategic career positioning.
+      </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <div class="process-card">
+
+        <div class="process-number">01</div>
+
+        <h3>
+          Understand
+        </h3>
+
+        <p>
+          We identify your experience, goals, leadership scope, and
+          professional direction.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">02</div>
+
+        <h3>
+          Analyze
+        </h3>
+
+        <p>
+          We examine the evidence, achievements, and positioning opportunities
+          within your professional story.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">03</div>
+
+        <h3>
+          Position
+        </h3>
+
+        <p>
+          We strategically communicate your experience around the
+          opportunities you are pursuing.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">04</div>
+
+        <h3>
+          Refine
+        </h3>
+
+        <p>
+          We refine the final presentation so your professional value is
+          communicated with clarity and confidence.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     WHO WE SERVE
+========================= -->
+
+<section class="audience">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        Who We Support
+      </div>
+
+      <h2>
+        Built For Professionals With Something Valuable To Communicate
+      </h2>
+
+      <p>
+        Our services support professionals at different stages of their
+        career journey.
+      </p>
+
+    </div>
+
+
+    <div class="audience-grid">
+
+      <div class="audience-card">
+        <h3>Executives</h3>
+        <p>
+          Leaders positioning themselves for senior and executive opportunities.
+        </p>
+      </div>
+
+      <div class="audience-card">
+        <h3>Experienced Professionals</h3>
+        <p>
+          Professionals who need their experience and achievements presented strategically.
+        </p>
+      </div>
+
+      <div class="audience-card">
+        <h3>Career Transitioners</h3>
+        <p>
+          Professionals navigating a new industry, function, level, or direction.
+        </p>
+      </div>
+
+      <div class="audience-card">
+        <h3>High-Potential Candidates</h3>
+        <p>
+          Professionals preparing to communicate their value for important opportunities.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Your Next Chapter Starts With Positioning
+    </div>
+
+    <h2>
+      Ready to Present Your Career at Its True Value?
+    </h2>
 
     <p>
       Tell us about your career goals, target opportunity, or professional
-      challenge and our team can help identify the right service for you.
+      challenge. Our team can help identify the right strategic service
+      for your next step.
     </p>
 
-    <a class="button" href="contact.html">Start Your Journey</a>
+    <a href="contact.html" class="button button-primary">
+      Start Your Journey
+    </a>
 
   </div>
+
 </section>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
   <div class="container">
-    <strong>UNSTOPPABLE CAREER SERVICES</strong><br><br>
-    Executive Career Strategy • Professional Positioning • Talent Services<br><br>
+
+    <strong>
+      UNSTOPPABLE CAREER SERVICES
+    </strong>
+
+    <br><br>
+
+    Executive Career Strategy
+    <span class="gold">•</span>
+    Professional Positioning
+    <span class="gold">•</span>
+    Talent Services
+
+    <br><br>
+
     unstoppablecareerservices@gmail.com
+
+    <br><br>
+
+    © 2025 Unstoppable Career Services. All rights reserved.
+
   </div>
+
 </footer>
 
 </body>
